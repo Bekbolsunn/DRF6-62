@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 from users.models import ConfirmationCode, CustomUser
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+ 
+
+class OauthCodeSerializer(serializers.Serializer):
+    code = serializers.CharField()
+
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 
